@@ -47,7 +47,10 @@
 										</p>
 									</div>
 
+									<a class="button small" style="float:right; margin-left: 5px;" onclick='resetMap()'>Recentrer la carte de Drancy</a>
+									<a class="button small" style="float:right" onclick='getLocation()'>Me géolocaliser</a>
 									<h4>Carte intéractive de Drancy</h4>
+
 									<!-- Create a container for the map with a fixed height -->
 									<div id="map" style="height: 500px;"></div>
 								</section>
@@ -263,6 +266,32 @@
 						L.marker(point.coord).addTo(map)
 							.bindPopup(`<b>${point.titre}</b><br><a href="${point.lien}">En savoir plus</a>`);
 					});
+
+					window.resetMap = function() {
+						map.setView([48.92, 2.45], 13.5);
+					};
+
+			        window.getLocation = function() {
+						if (navigator.geolocation) {
+							navigator.geolocation.getCurrentPosition(function(position) {
+								var userLat = position.coords.latitude;
+								var userLon = position.coords.longitude;
+								var userMarker = L.marker([userLat, userLon], {
+									icon: L.icon({
+										iconUrl: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png',
+										iconSize: [32, 32]
+									})
+								}).addTo(map)
+								.bindPopup("<b>Vous êtes ici</b>").openPopup();
+								map.setView([userLat, userLon], 16);
+							}, function() {
+								alert("Géolocalisation non disponible.");
+							});
+						} else {
+							alert("Votre navigateur ne supporte pas la géolocalisation.");
+						}
+					}
+
 				});
 			</script>
 			<script src="assets/js/jquery.min.js"></script>
