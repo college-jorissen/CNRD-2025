@@ -34,29 +34,24 @@
 										<h1>La libération du camp</h1>
 									</header>
 
-									<span class="image main"><img src="../../images/pic11.jpg" alt="" /></span>
-
-									<p>Paragraphe.</p>
-									<p>Paragraphe.</p>
-									<p>Paragraphe.</p>
-
-									<hr class="major" />
-
-									<h2>Sous titre 1</h2>
-									<p>Paragraphe.</p>
-									<p>Paragraphe.</p>
-
-									<hr class="major" />
-
-									<h2>Sous titre 2</h2>
-									<p>Paragraphe.</p>
-									<p>Paragraphe.</p>
-
-									<hr class="major" />
-
-									<h2>Sous titre 3</h2>
-									<p>Paragraphe.</p>
-									<p>Paragraphe.</p>
+									<div class="box alt">
+										<div class="row gtr-50 gtr-uniform">
+											<div class="col-6">
+												<span class="image fit">
+													<a href="../../images/muette/Siham-Shanel-Page1.png" target="_blank">
+														<img src="../../images/muette/Siham-Shanel-Page1.png" alt="" onclick="openFullscreen(this)" />
+													</a>
+												</span>
+											</div>
+											<div class="col-6">
+												<span class="image fit">
+													<a href="../../images/muette/Siham-Shanel-Page2.png" target="_blank">
+														<img src="../../images/muette/Siham-Shanel-Page2.png" alt="" onclick="openFullscreen(this)" />
+													</a>
+												</span>	
+											</div>
+										</div>
+									</div>
 
 								</section>
 
@@ -136,6 +131,17 @@
 			</div>
 
 		<!-- Scripts -->
+			<script>
+				function openFullscreen(image) {
+					if (image.requestFullscreen) {
+						image.requestFullscreen();
+					} else if (image.webkitRequestFullscreen) { // For Safari
+						image.webkitRequestFullscreen();
+					} else if (image.msRequestFullscreen) { // For IE11
+						image.msRequestFullscreen();
+					}
+				}
+			</script>
 			<script src="../../assets/js/jquery.min.js"></script>
 			<script src="../../assets/js/browser.min.js"></script>
 			<script src="../../assets/js/breakpoints.min.js"></script>
