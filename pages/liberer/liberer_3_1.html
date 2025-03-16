@@ -31,32 +31,34 @@
 							<!-- Content -->
 								<section>
 									<header class="main">
-										<h1>L’arrivée de la 2eme DB</h1>
+										<h1>Rappel du contexte national</h1>
 									</header>
 
-									<span class="image main"><img src="../../images/pic11.jpg" alt="" /></span>
-
-									<p>Paragraphe.</p>
-									<p>Paragraphe.</p>
-									<p>Paragraphe.</p>
+									<div class="box alt">
+										<div class="row gtr-50 gtr-uniform">
+											<div class="col-6">
+												<span class="image fit">
+													<a href="../../images/liberer/Contexte-National-1.jpg" target="_blank">
+														<img src="../../images/liberer/Contexte-National-1.jpg" alt="" onclick="openFullscreen(this)" />
+													</a>
+												</span>
+											</div>
+											<div class="col-6">
+												<span class="image fit">
+													<a href="../../images/liberer/Contexte-National-1.jpg" target="_blank">
+														<img src="../../images/liberer/Contexte-National-2.jpg" alt="" onclick="openFullscreen(this)" />
+													</a>
+												</span>	
+											</div>
+										</div>
+									</div>
 
 									<hr class="major" />
-
-									<h2>Sous titre 1</h2>
-									<p>Paragraphe.</p>
-									<p>Paragraphe.</p>
-
-									<hr class="major" />
-
-									<h2>Sous titre 2</h2>
-									<p>Paragraphe.</p>
-									<p>Paragraphe.</p>
-
-									<hr class="major" />
-
-									<h2>Sous titre 3</h2>
-									<p>Paragraphe.</p>
-									<p>Paragraphe.</p>
+									<h2>Archives</h2>
+									<ul>
+										<li id="footnote-1">[1] </li>
+										<li id="footnote-2">[2] </li>
+									</ul>
 
 								</section>
 
@@ -90,9 +92,15 @@
 										<ul>
 											<li><a href="../../pages/liberer/liberer_1.html">Le rôle majeur des cheminots</a></li>
 											<li><a href="../../pages/liberer/liberer_2.html">Le rôle majeur des résistants communistes</a></li>
-											<li><a href="../../pages/liberer/liberer_3.html">Les étapes de la Libération de la ville</a></li>
+											<li>
+												<span class="opener active">Les étapes de la Libération de la ville</span>
+												<ul>
+													<li><a href="../../pages/liberer/liberer_3_1.html">Rappel du contexte national</a></li>
+													<li><a href="../../pages/liberer/liberer_3_2.html">Préparer la Libération de la ville en 9 jours</a></li>
+													<li><a href="../../pages/liberer/liberer_3_3.html">L’arrivée de la 2eme DB</a></li>
+												</ul>
+											</li>
 											<li><a href="../../pages/liberer/liberer_4.html">Les victimes de la Libération</a></li>
-											<li><a href="../../pages/liberer/liberer_5.html">L’arrivée de la 2eme DB</a></li>
 										</ul>
 									</li>
 									<li>
@@ -136,6 +144,17 @@
 			</div>
 
 		<!-- Scripts -->
+			<script>
+				function openFullscreen(image) {
+					if (image.requestFullscreen) {
+						image.requestFullscreen();
+					} else if (image.webkitRequestFullscreen) { // For Safari
+						image.webkitRequestFullscreen();
+					} else if (image.msRequestFullscreen) { // For IE11
+						image.msRequestFullscreen();
+					}
+				}
+			</script>
 			<script src="../../assets/js/jquery.min.js"></script>
 			<script src="../../assets/js/browser.min.js"></script>
 			<script src="../../assets/js/breakpoints.min.js"></script>
