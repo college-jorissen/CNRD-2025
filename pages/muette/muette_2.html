@@ -34,13 +34,36 @@
 										<h1>Résister en s’échappant : le creusement d’un tunnel</h1>
 									</header>
 
-									<p align=""justify>
+									<p align="justify">
 										Dans cette vidéo sous forme de table ronde, Alexandru, Radu et Syrine A. vous présentent un moment incroyable de l'Histoire 
 										de la Cité de la Muette : le creusement d'un tunnel réalisé par les internés en 1943 pour s'échapper du camp.
 									</p>
 
-									<!-- <iframe width=100% height="400" src="https://www.youtube.com/embed/"></iframe> -->
+									<span>
+										<iframe width=100% height="600" src="https://www.youtube.com/embed/s5CUUdDql9g"></iframe>
+									</span>
+									
+									<p></p>
 
+									<div class="row gtr-200">
+
+										<div class="col-2 col-12-medium">
+										</div>
+
+										<div class="col-8 col-12-medium">
+											<span class="image fit">
+												<a href="../../images/muette/plaque-tunnel.png" target="_blank">
+													<img src="../../images/muette/plaque-tunnel.png" alt="" onclick="openFullscreen(this)" />
+												</a>
+												<figcaption align="center">Cette plaque commémore les efforts acharnés de 70 internés de Drancy pour atteindre la liberté. Quel acte de courage et de résistance !</figcaption>
+											</span>
+										</div>
+
+										<div class="col-2 col-12-medium">
+										</div>
+									</div>
+
+									
 									<hr class="major" />
 									<h2>Archives</h2>
 									<ul>
@@ -85,10 +108,16 @@
 												<ul>
 													<li><a href="../../pages/liberer/liberer_3_1.html">Rappel du contexte national</a></li>
 													<li><a href="../../pages/liberer/liberer_3_2.html">Préparer la Libération de la ville en 9 jours</a></li>
-													<li><a href="../../pages/liberer/liberer_3_3.html">L’arrivée de la 2eme DB</a></li>
 												</ul>
 											</li>
-											<li><a href="../../pages/liberer/liberer_4.html">Les victimes de la Libération</a></li>
+											<li>
+												<span class="opener">L’arrivée de la 2eme DB</span>
+												<ul>
+													<li><a href="../../pages/liberer/liberer_4_1.html">L'histoire de la 2eme DB</a></li>
+													<li><a href="../../pages/liberer/liberer_4_2.html">La 2eme DB à Drancy </a></li>
+												</ul>
+											</li>
+											<li><a href="../../pages/liberer/liberer_5.html">Les victimes de la Libération</a></li>
 										</ul>
 									</li>
 									<li>
@@ -133,6 +162,17 @@
 			</div>
 
 		<!-- Scripts -->
+		<script>
+			function openFullscreen(image) {
+				if (image.requestFullscreen) {
+					image.requestFullscreen();
+				} else if (image.webkitRequestFullscreen) { // For Safari
+					image.webkitRequestFullscreen();
+				} else if (image.msRequestFullscreen) { // For IE11
+					image.msRequestFullscreen();
+				}
+			}
+		</script>
 			<script src="../../assets/js/jquery.min.js"></script>
 			<script src="../../assets/js/browser.min.js"></script>
 			<script src="../../assets/js/breakpoints.min.js"></script>

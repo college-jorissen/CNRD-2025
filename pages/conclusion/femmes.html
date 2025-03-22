@@ -34,9 +34,24 @@
 										<h1>Inscrire davantage les femmes dans le paysage drancéen</h1>
 									</header>
 
-									<p align=""justify>
-										
+									<p align="justify">
+										Dans ce discours, Syrine A, Julia, Shanel, Siham, Syrine M. et Neera souhaitent mettre en avant le 
+										rôle des femmes dans la résistance en proposant de renommer notre collège du nom d'Odette Nilès, femme, 
+										résistante et passeuse de mémoire drancéenne en inscrivant ainsi pleinement son patronyme dans le paysage drancéen. 
+										À vous, membres du jury du CNRD, nous vous lançons une bouée pour appuyer notre demande auprès du Département de 
+										Seine-Saint-Denis et de la mairie de Drancy !
 									</p>
+
+									<div class="audio-player">
+										<audio id="myAudio">
+											<source src="../../audio/conclusion/3h2.mp3" type="audio/mpeg">
+											Your browser does not support the audio element.
+										</audio>
+										
+										<button class="button" onclick="togglePlay()" id="playPauseBtn">Play</button>
+										<input type="range" id="progressBar" value="0" step="1" min="0" max="100" onchange="seekAudio()">
+										<span id="currentTime">00:00</span> / <span id="duration">2:43</span>
+									</div>
 
 									<hr class="major" />
 									<h2>Archives</h2>
@@ -82,10 +97,16 @@
 												<ul>
 													<li><a href="../../pages/liberer/liberer_3_1.html">Rappel du contexte national</a></li>
 													<li><a href="../../pages/liberer/liberer_3_2.html">Préparer la Libération de la ville en 9 jours</a></li>
-													<li><a href="../../pages/liberer/liberer_3_3.html">L’arrivée de la 2eme DB</a></li>
 												</ul>
 											</li>
-											<li><a href="../../pages/liberer/liberer_4.html">Les victimes de la Libération</a></li>
+											<li>
+												<span class="opener">L’arrivée de la 2eme DB</span>
+												<ul>
+													<li><a href="../../pages/liberer/liberer_4_1.html">L'histoire de la 2eme DB</a></li>
+													<li><a href="../../pages/liberer/liberer_4_2.html">La 2eme DB à Drancy </a></li>
+												</ul>
+											</li>
+											<li><a href="../../pages/liberer/liberer_5.html">Les victimes de la Libération</a></li>
 										</ul>
 									</li>
 									<li>
@@ -130,11 +151,128 @@
 			</div>
 
 		<!-- Scripts -->
+			<script>
+				var audio = document.getElementById("myAudio");
+				var progressBar = document.getElementById("progressBar");
+				var playPauseBtn = document.getElementById("playPauseBtn");
+				var currentTimeDisplay = document.getElementById("currentTime");
+				var durationDisplay = document.getElementById("duration");
+
+				// Toggle play/pause
+				function togglePlay() {
+					if (audio.paused) {
+						audio.play();
+						playPauseBtn.textContent = "Pause";
+					} else {
+						audio.pause();
+						playPauseBtn.textContent = "Play";
+					}
+				}
+
+				// Update progress bar as the audio plays
+				audio.addEventListener("timeupdate", function() {
+					var progress = (audio.currentTime / audio.duration) * 100;
+					progressBar.value = progress;
+					updateCurrentTime();
+				});
+
+				// Seek to a different time in the audio
+				function seekAudio() {
+					var seekTime = (progressBar.value / 100) * audio.duration;
+					audio.currentTime = seekTime;
+				}
+
+				// Update duration and current time
+				audio.addEventListener("loadedmetadata", function() {
+					durationDisplay.textContent = formatTime(audio.duration);
+				});
+
+				function updateCurrentTime() {
+					currentTimeDisplay.textContent = formatTime(audio.currentTime);
+				}
+
+				// Format time to mm:ss
+				function formatTime(seconds) {
+					var minutes = Math.floor(seconds / 60);
+					var secs = Math.floor(seconds % 60);
+					if (secs < 10) secs = "0" + secs;
+					return minutes + ":" + secs;
+				}
+			</script>
 			<script src="../../assets/js/jquery.min.js"></script>
 			<script src="../../assets/js/browser.min.js"></script>
 			<script src="../../assets/js/breakpoints.min.js"></script>
 			<script src="../../assets/js/util.js"></script>
 			<script src="../../assets/js/main.js"></script>
+
+			<style>
+				.audio-player {
+					display: flex;
+					align-items: center;
+					gap: 10px;
+				}
+				#progressBar {
+					width: 200px;
+					cursor: pointer;
+				}
+				button {
+					padding: 5px 10px;
+					cursor: pointer;
+				}
+			</style>
+
+	<style>
+		body {
+			background-color: #ffffff; /* White background for the page */
+		}
+		.audio-player {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			background-color: #2c2c2c; /* Dark background for the player */
+			padding: 10px;
+			border-radius: 8px;
+			color: #ffffff; /* White text for contrast */
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+			width: fit-content;
+			margin: 20px auto;
+		}
+		.audio-player button {
+		background-color: #eeeeee !important;
+		}
+
+		.audio-player button:hover {
+			background-color: #eeeeee !important;
+		}
+		#progressBar {
+			width: 200px;
+			cursor: pointer;
+			-webkit-appearance: none;
+			appearance: none;
+			background-color: #444444;
+			border-radius: 5px;
+			height: 5px;
+		}
+		#progressBar::-webkit-slider-thumb {
+			-webkit-appearance: none;
+			appearance: none;
+			width: 10px;
+			height: 10px;
+			background-color: #ffffff;
+			border-radius: 50%;
+			cursor: pointer;
+		}
+		#progressBar::-moz-range-thumb {
+			width: 10px;
+			height: 10px;
+			background-color: #ffffff;
+			border-radius: 50%;
+			cursor: pointer;
+		}
+		#currentTime, #duration {
+			font-size: 14px;
+		}
+	</style>
 
 	</body>
 </html>
